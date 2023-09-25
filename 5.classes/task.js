@@ -1,6 +1,6 @@
 // Задание 1
 class PrintEditionItem {
-	constructor (name, releaseDate, pagesCount) {
+    constructor (name, releaseDate, pagesCount) {
 		this.name = name;
 		this.releaseDate = releaseDate;
 		this.pagesCount = pagesCount;
@@ -36,28 +36,28 @@ class Magazine extends PrintEditionItem {
 }
 
 class Book extends PrintEditionItem {
-	 constructor(author, name, releaseDate, pagesCount) {
+	constructor(author, name, releaseDate, pagesCount) {
         super(name, releaseDate, pagesCount);
         this.author = author;
         this.type = "book";
     }
 }
 class NovelBook extends Book {
-	 constructor(author, name, releaseDate, pagesCount) {
+	constructor(author, name, releaseDate, pagesCount) {
         super(author, name, releaseDate, pagesCount);
         this.type = "novel";
     }
 }
 
 class FantasticBook extends Book {
-	 constructor(author, name, releaseDate, pagesCount) {
+	constructor(author, name, releaseDate, pagesCount) {
         super(author, name, releaseDate, pagesCount);
         this.type = "fantastic";
     }
 }
 
 class DetectiveBook extends Book {
-	 constructor(author, name, releaseDate, pagesCount) {
+	constructor(author, name, releaseDate, pagesCount) {
         super(author, name, releaseDate, pagesCount);
         this.type = "detective";
     }
@@ -157,44 +157,41 @@ console.log("Количество книг после выдачи: " + library.
 // Задание 3*
 class Student {
     constructor(name) {
-      this.name = name
-      this.marks = {}
+        this.name = name;
+        this.marks = {};
     }
   
     addMark(mark, subject) {
-      if (mark < 2 || mark > 5) {
-        return
-      }
+        if (mark < 2 || mark > 5) {
+            return 0;
+        }
   
-      if (!this.marks[subject]) {
-        this.marks[subject] = []
-      }
+        if (!this.marks[subject]) {
+            this.marks[subject] = []
+        }
   
-      this.marks[subject].push(mark)
+        this.marks[subject].push(mark);
     }
   
     getAverageBySubject(subject) {
-      if (!this.marks[subject] || this.marks[subject].length === 0) {
-        return 0
-      }
+        if (!this.marks[subject] || this.marks[subject].length === 0) {
+            return 0;
+        }
   
-      const sum = this.marks[subject].reduce((acc, mark) => acc + mark, 0)
-      const average = sum / this.marks[subject].length
-      return average
+        const sum = this.marks[subject].reduce((acc, mark) => acc + mark, 0);
+        const average = sum / this.marks[subject].length;
+        return average;
     }
   
     getAverage() {
-      const subjects = Object.keys(this.marks)
-      if (subjects.length === 0) {
-        return 0
-      }
+        const subjects = Object.keys(this.marks);
+        if (subjects.length === 0) {
+            return 0;
+        }
   
-      const sum = subjects.reduce(
-        (acc, subject) => acc + this.getAverageBySubject(subject),
-        0
-      )
-      const average = sum / subjects.length
-      return average
+        const sum = subjects.reduce((acc, subject) => acc + this.getAverageBySubject(subject), 0);
+        const average = sum / subjects.length;
+        return average;
     }
   }
   
