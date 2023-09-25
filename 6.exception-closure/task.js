@@ -1,4 +1,4 @@
-﻿﻿﻿// task 1
+﻿﻿﻿// Задание1
 function parseCount(value) {
   const parsedValue = Number.parseFloat(value)
   if (Number.isNaN(parsedValue)) {
@@ -15,7 +15,7 @@ function validateCount(value) {
   }
 }
 
-// task 2
+// Задание 2
 class Triangle {
   constructor(side1, side2, side3) {
     this.side1 = side1;
