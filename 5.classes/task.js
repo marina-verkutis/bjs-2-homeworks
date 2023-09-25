@@ -206,5 +206,3 @@ student.addMark(6, "физика")
 student.getAverageBySubject("физика"); // Средний балл по предмету физика 4.5
 student.getAverageBySubject("биология"); // Вернёт 0, так как по такому предмету нет никаких оценок.
 student.getAverage(); // Средний балл по всем предметам 4.75
-
-  
